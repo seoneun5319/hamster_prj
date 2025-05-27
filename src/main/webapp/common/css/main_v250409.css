@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+body {
+	font-family: "맑은 고딕", "굴림체", "Sans-Serif";
+	color: #333
+}
+
+ol, ul, li {
+	list-style: none;
+	padding-left: 0px
+}
+
+hr {
+	display: none;
+}
+
+a {
+	text-decoration: none;
+	color: #333
+}
+
+a:hover {
+	text-decoration: underline;
+	color: #888
+}
+
+th, b {
+	font-weight: normal;
+}
+
+.inputBox {
+	border: 1px solid #D4D4D4;
+	height: 32px
+}
+
+[type='button']{cursor:pointer;}
+
+.btnBox {
+	border: 1px solid #D4D4D4;
+	height: 36px;
+	background-color: #FFFFFF;
+}
+
+#btnConfirm {
+	background-color: #04264C;
+	width: 180px;
+	height: 50px;
+	color: #FFFFFF;
+	font-weight: bold;
+	border: 0px
+}
+
+#btnCancel {
+	background-color: #87888A;
+	width: 180px;
+	height: 50px;
+	color: #FFFFFF;
+	font-weight: bold;
+	border: 0px
+}

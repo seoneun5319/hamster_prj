@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- favicon 설정 -->
+<link rel="shortcut icon" href="http://192.168.10.95/html_prj/common/images/favicon2.ico"/>
+<!-- site 기본 CSS -->
+<link rel="styleSheet" type="text/css" 
+href="http://192.168.10.95/html_prj/common/css/main_v250409.css">
+<!-- bootstrap CDN -->
+<link rel="stylesheet" type="text/css"
+href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css">
+
+<style type="text/css">
+#output{border: 1px solid #333; width:600px; height:300px}
+</style>
+<script type="text/javascript">
+function getArrayValue(){
+	//1. form 객체를 얻기
+	var obj=document.frm;
+	
+	//2.Form Control 얻기
+	var radioArr=obj.gender; //이름이 같으므로 배열로 처리 된다.
+	//radio의 갯수만큼 반복
+	var gender="";
+	for(var i=0 ; i < radioArr.length ; i++){
+		//alert(radioArr[i].checked+" / "+radioArr[i].value)
+		if (radioArr[i].checked) {
+			gender=radioArr[i];
+		}//end if
+	}//end for
+	//라디오 버튼을 선택하지 않았을 때 "성별을 확인해 주세요."를 경고창으로
+	//보여주고 돌아가기
+	if (gender == "") {
+		alert("성별을 확인해 주세요.")
+		return;
+	}//end if
+	
+	//체크박스 : checked 속성 사용
+	var langArr=obj.lang;
+	var langUl="<ul>";
+	
+	for(var i=0 ; i < langArr.langth ; i++){
+		if(langArr[i].checked){
+			langUl +=`<li>${langArr[i].value}</li>`;
+		}//end if
+	}//end for
+	langUl += "</ul>";
+	
+	//select 값 얻기
+	var selArr=obj.domain;
+	//alert(selArr.selectedIndex);//선택한 옵션의 인덱스 얻기
+	var domain="";
+	for( var i=0 ; i < selArr.length ; i++ ){
+		//alert(selArr[i].selected+" / "+selArr[i].value)
+		if (selArr[i].selected) {
+			domain=selArr[i].value
+		}//end if
+	}//end for
+	
+	var emailArr=obj.email;
+	var email="";
+	for (var i = 0; i < emailArr.length; i++) {
+		email += emailArr[i]+" ";
+	}//end for
+	
+	var output=`
+		<ul>
+		<li><strong>확인 성별</strong>${gender}</li>
+		<li><strong>확인 언어</strong>${langUl}</li>
+		<li><strong>선택 도메인</strong>${domain}</li>
+		<li><strong>입력 이메일</strong>${email}</li>
+		</ul>
+		`;
+	
+	document.getElementById("output").innerHTML=output;
+}//getArrayValue
+</script>
+</head>
+<body>
+<div>
+<h2>name 속성의 값이 중복되는 Form Control 처리</h2>
+<form name="frm">
+<ul>
+<li><label>radio</label>
+	<input type="radio" name="gender" value="M"/>남자
+	<input type="radio" name="gender" value="F"/>여자
+</li>
+<li>
+	<label>checkbox</label>
+	<input type="checkbox" name="lang" value="Java"/>Java SE
+	<input type="checkbox" name="lang" value="C/C++"/>C/C++
+	<input type="checkbox" name="lang" value="JSP"/>JSP
+	<input type="checkbox" name="lang" value="Python"/>Python
+	<input type="checkbox" name="lang" value="ASP"/>ASP
+</li>
+<li>
+	<label>select</label>
+	<select name="domain">
+		<option value="daum.net">다음</option>
+		<option value="google.com">구글</option>
+		<option value="youtube.com">유튜브</option>
+		<option value="naver.com">네이버</option>
+	</select>
+</li>
+<li><label>이메일</label>
+<!-- HTML Form Control의 종류와 상관없이
+	name 속성이 같다면 배열로 처리된다. -->
+	<input type="text" name="email"/>
+	<input type="text" name="email"/>
+	<input type="text" name="email"/>
+</li>
+<li>
+	<input type="button" value="값 얻기" class="btn btn-success"
+		onclick="getArrayValue()"/>
+	<input type="reset" value="초기화" class="btn btn-danger"/>
+</li>
+</ul>
+</form>
+</div>
+<div id="output"></div>
+</body>
+</html>

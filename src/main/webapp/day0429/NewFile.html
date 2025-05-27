@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>디저트39 쇼핑몰</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { margin: 0; font-family: 'Noto Sans KR', sans-serif; }
+        header { background-color: #fff; border-bottom: 1px solid #ccc; padding: 10px 30px; display: flex; align-items: center; justify-content: space-between; }
+        header .logo img { height: 40px; }
+        nav a { margin: 0 15px; text-decoration: none; color: #333; font-weight: bold; }
+        .main-banner { width: 100%; height: 400px; background: url('images/main_banner.jpg') center/cover no-repeat; }
+        .content { padding: 50px 30px; text-align: center; }
+        .card-section { display: flex; justify-content: space-around; margin-top: 30px; }
+        .card { width: 250px; border: 1px solid #ccc; border-radius: 8px; overflow: hidden; }
+        .card img { width: 100%; height: 160px; object-fit: cover; }
+        .card p { padding: 10px; margin: 0; }
+        footer { background-color: #333; color: white; text-align: center; padding: 20px; font-size: 14px; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+<!-- 헤더 -->
+<header>
+    <div class="logo">
+        <a href="index.html"><img src="images/logo.png" alt="디저트39 로고"></a>
+    </div>
+    <nav>
+        <a href="dessert.html">디저트</a>
+        <a href="drink.html">음료</a>
+        <a href="store.html">매장찾기</a>
+        <a href="brand.html">브랜드 스토리</a>
+        <a href="login.html">로그인</a>
+        <a href="cart.html">장바구니</a>
+    </nav>
+</header>
+
+<!-- 메인 배너 -->
+<div class="main-banner">
+    <!-- 메인 배너 이미지는 CSS background로 처리 -->
+</div>
+
+<!-- 콘텐츠 영역 -->
+<div class="content">
+    <h2>디저트 추천 메뉴</h2>
+    <div class="card-section">
+        <div class="card">
+            <img src="images/cake.jpg" alt="케이크">
+            <p>부드러운 생크림 케이크</p>
+        </div>
+        <div class="card">
+            <img src="images/tart.jpg" alt="타르트">
+            <p>달콤한 과일 타르트</p>
+        </div>
+        <div class="card">
+            <img src="images/macaron.jpg" alt="마카롱">
+            <p>알록달록 프랑스 마카롱</p>
+        </div>
+    </div>
+</div>
+
+<!-- 푸터 -->
+<footer>
+    © 2025 디저트39 쇼핑몰 | 서울시 강남구 테헤란로 132 | 고객센터: 02-3482-4632  
+</footer>
+
+</body>
+</html>
